@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Customer {
 
     @Id
