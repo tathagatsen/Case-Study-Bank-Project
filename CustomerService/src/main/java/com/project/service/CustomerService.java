@@ -218,6 +218,7 @@ import com.project.model.*;
 
 import com.project.exception.ResourceNotFound;
 import com.project.api.ApiResponse;
+import com.project.feign.CustomerAccountInterface;
 import com.project.feign.CustomerAdminInterface;
 import com.project.feign.CustomerTicketNotificationInterface;
 import com.project.repository.CustomerKycRepository;
@@ -246,6 +247,9 @@ public class CustomerService {
 
     @Autowired
     private CustomerAdminInterface customerAdminInterface;
+    
+    @Autowired
+    private CustomerAccountInterface customerAccountInterface;
 
     // 1. Register Customer
     public UserCustomerDto registerCustomer(UserCustomerDto customerDto) {
@@ -413,4 +417,13 @@ public class CustomerService {
                 .orElseThrow(() -> new ResourceNotFound("Customer not found with id: " + customerId));
         return customerLoginHistoryRepository.findAllByCustomer(c);
     }
+
+	public String createAccount(AccountRequestDto dto) {
+		Customer c = customerRepository.findById(dto.getCustomerId())
+                .orElseThrow(() -> new ResourceNotFound("Customer not found with id: " + dto.getCustomerId()));
+		// TODO Auto-generated method stub
+		dto.setEmail(c.getEmail());
+		customerAccountInterface.createAccount(dto);
+		return null;
+	}
 }

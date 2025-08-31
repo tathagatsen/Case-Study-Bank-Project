@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.api.ApiResponse;
+import com.project.dto.AccountRequestDto;
 import com.project.dto.CustomerKycDto;
 import com.project.dto.CustomerSupportTicketDto;
 import com.project.dto.UserCustomerDto;
@@ -157,5 +158,11 @@ public class CustomerController {
         String question = payload.get("question");
         String answer = chatBotService.getResponse(question);
         return ResponseEntity.ok(answer);
+    }
+    
+    @PostMapping("/createAccount")
+    public ResponseEntity<String> createAccount(@RequestBody AccountRequestDto dto){
+    	String response=customerService.createAccount(dto);
+    	return ResponseEntity.ok(response);
     }
 }
