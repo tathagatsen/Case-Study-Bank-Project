@@ -3,6 +3,7 @@ package com.project.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.dto.CustomerAdminKycDto;
 import com.project.dto.CustomerKycDto;
@@ -11,4 +12,7 @@ import com.project.dto.CustomerKycDto;
 public interface CustomerAdminInterface {
 	@PostMapping("/send-kyc-details")
 	public void sendKycDetails(@RequestBody CustomerAdminKycDto customerAdminKycDto);
+	
+	@PostMapping("/deactivate")
+	public void deactivateCustomer(@RequestParam Long customerId);
 }

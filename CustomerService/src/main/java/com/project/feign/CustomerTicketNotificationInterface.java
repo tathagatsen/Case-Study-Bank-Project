@@ -16,4 +16,5 @@ public interface CustomerTicketNotificationInterface {
 	
 	@PostMapping("/notify-ticket")
 	void sendTicketNotification(@RequestBody TicketNotificationDto dto);
+	
 }

@@ -14,6 +14,7 @@ import com.project.dto.CustomerKycDto;
 import com.project.dto.CustomerSupportTicketDto;
 import com.project.dto.UserCustomerDto;
 import com.project.model.Customer;
+import com.project.model.CustomerLoginHistory;
 import com.project.model.KycDocument;
 import com.project.model.SupportTicket;
 import com.project.service.ChatBotService;
@@ -145,10 +146,10 @@ public class CustomerController {
     }
 
     @GetMapping("/login-history/{customerId}")
-    public ResponseEntity<List<Object>> getLoginHistory(@PathVariable Long customerId) {
+    public ResponseEntity<List<CustomerLoginHistory>> getLoginHistory(@PathVariable Long customerId) {
         // returns list of CustomerLoginHistory objects
-        List<?> history = customerService.getLoginHistory(customerId);
-        return ResponseEntity.ok((List<Object>) history);
+        List<CustomerLoginHistory> history = customerService.getLoginHistory(customerId);
+        return ResponseEntity.ok((List<CustomerLoginHistory>) history);
     }
 
     @PostMapping("/ask-chatbot")

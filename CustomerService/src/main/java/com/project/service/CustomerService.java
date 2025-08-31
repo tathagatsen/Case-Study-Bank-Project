@@ -312,6 +312,7 @@ public class CustomerService {
         customerRepository.save(c);
 
         // TODO: if admin needs to be informed, call customerAdminInterface here.
+        customerAdminInterface.deactivateCustomer(customerId);
         return new ApiResponse(true, "Customer deactivated successfully");
     }
 
