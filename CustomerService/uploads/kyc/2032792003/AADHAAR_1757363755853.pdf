@@ -1,0 +1,27 @@
+kyc doc in customer should be changed
+admin user controller testing
+deactivation logic remaining(connect with customer)
+4 method should be in monitoring
+monitoring remaining
+remove dummy data
+For reports, in user activity, send customer login history for a customer id(option)
+test support ticket
+
+
+DASHBOARD
+test /overview - AdminUserController TEST
+
+USER MANAGEMENT
+customers list, active, inactive
+
+Account Management
+accounts list, ACTIVE, SUSPENDED, FROZEN, CLOSED
+
+Transaction Management
+flagged logic
+
+Report
+Transactions for a account byAccountNumber between start and end dates
+user - login histoy for a CustomerId between start and end dates
+
+Support Tickets test
