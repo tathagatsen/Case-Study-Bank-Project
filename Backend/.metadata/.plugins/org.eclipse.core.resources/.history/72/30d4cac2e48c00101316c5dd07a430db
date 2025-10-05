@@ -1,0 +1,52 @@
+package com.project.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+@Configuration
+@EnableWebSecurity
+public class TransactionConfig {
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        config.addAllowedOrigin("http://localhost:5173"); // Your React frontend origin
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        config.setAllowCredentials(true); // Only if needed (with auth cookies)
+        source.registerCorsConfiguration("/**", config);
+        return new CorsFilter(source);
+    }
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable()) // disable CSRF for APIs
+            .cors(withDefaults()) // allow CORS
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // stateless
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers(
+            		// Permit these Transaction endpoints for public use (adjust as needed)
+                    "/transactions/create",
+                    "/transactions/get/**",
+                    "/transactions/account/**", // covers /transactions/account/{accountId} and /mini-statement
+                    // Admin/reporting endpoints, you may want to secure these in prod:
+                    "/transactions/admin/**",
+                    "/actuator/**", // health checks
+                    "/swagger-ui/**", "/v3/api-docs/**" // API docs
+                ).permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(login -> login.disable())
+            .httpBasic(basic -> basic.disable());
+        return http.build();
+    }
+}

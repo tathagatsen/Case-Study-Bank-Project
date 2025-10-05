@@ -1,0 +1,54 @@
+{
+  "customer": [
+    {
+      "id": "1",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "email": "alice.smith@example.com",
+      "password": "Password123!",
+      "phone": "+1234567890",
+      "dob": "1990-01-15",
+      "address": "123 Main St, Springfield, USA"
+    },
+    {
+      "id": "2",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "email": "bob.johnson@example.com",
+      "password": "Password123!",
+      "phone": "+1987654321",
+      "dob": "1985-12-09",
+      "address": "456 Oak Ave, Metropolis, USA"
+    },
+    {
+      "id": "3",
+      "firstName": "Carol",
+      "lastName": "Williams",
+      "email": "carol.williams@example.com",
+      "password": "Password123!",
+      "phone": "+1122334455",
+      "dob": "1994-03-22",
+      "address": "789 Elm St, Gotham, USA"
+    },
+    {
+      "id": "02f7",
+      "firstName": "Pap",
+      "lastName": "pkar",
+      "dob": "2025-09-04",
+      "email": "prathamesh.paradkar@oracle.com",
+      "password": "123456",
+      "phone": "08693873153",
+      "address": "pancham"
+    },
+    {
+      "id": "c922",
+      "firstName": "Dhanashree",
+      "lastName": "Otari",
+      "dob": "2003-11-27",
+      "email": "dhachamaotari@gmail.com",
+      "password": "Dmo@2025",
+      "phone": "8830542278",
+      "address": "Thane"
+    }
+  ]
+}

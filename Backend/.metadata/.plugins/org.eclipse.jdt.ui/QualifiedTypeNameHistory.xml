@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.project.dto.CustomerKycDto"/>
+    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="com.project.model.Account"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.project.dto.CustomerAdminKycDto"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.project.dto.SupportTicketResponseDto2"/>
+    <fullyQualifiedTypeName name="com.project.model.SupportTicket"/>
+    <fullyQualifiedTypeName name="com.project.model.Transaction"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.project.repository.TransactionRepository"/>
+    <fullyQualifiedTypeName name="com.project.dto.KycDocumentDto"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="com.project.model.KycDocument"/>
+    <fullyQualifiedTypeName name="com.project.dto.KycDocumentDto2"/>
+    <fullyQualifiedTypeName name="com.project.service.KycDocumentMapper"/>
+    <fullyQualifiedTypeName name="com.project.dto.CustomerAdminDto"/>
+</qualifiedTypeNameHistroy>
