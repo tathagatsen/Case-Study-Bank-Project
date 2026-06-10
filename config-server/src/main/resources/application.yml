@@ -1,0 +1,29 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  security:
+    user:
+      name: configuration
+      password: config@123
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/tathagatsen/Case-Study-Bank-Project.git
+          default-label: nexbank
+          clone-on-start: true
+          timeout: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
