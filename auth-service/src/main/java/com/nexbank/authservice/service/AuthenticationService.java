@@ -14,6 +14,6 @@ public class AuthenticationService {
 	private final UserRepository userRepository;
 	
 	public User authenticate(String username) {
-		return userRepository.FindByUserName(username).filter(User::isEnabled).orElseThrow(()->new BadCredentialsException("Invalid User or Disabled User"));
+		return userRepository.findByUserName(username).filter(User::isEnabled).orElseThrow(()->new BadCredentialsException("Invalid User or Disabled User"));
 	}
 }

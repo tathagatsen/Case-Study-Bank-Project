@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 import com.nexbank.authservice.domain.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-	Optional<User> FindByUserName(String username);
+	Optional<User> findByUserName(String username);
 }

@@ -4,7 +4,7 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:postgreql://localhost:5432/authdb
+    url: jdbc:postgresql://localhost:5432/auth_db
     username: postgres
     password: postgresen
   jpa:
@@ -14,3 +14,7 @@ spring:
   flyway:
     enabled: true
     locations: classpath:/db/migration 
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:8761/eureka

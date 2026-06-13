@@ -24,7 +24,7 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String clinetId;
+	private String clientId;
 	private String clientSecret;
 	private String scope;
 	private boolean active;

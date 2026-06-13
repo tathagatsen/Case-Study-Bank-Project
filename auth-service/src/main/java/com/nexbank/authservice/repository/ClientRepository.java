@@ -10,5 +10,5 @@ import com.nexbank.authservice.domain.Client;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long>{
-	Optional<Client> FindByClientId(String clientId);
+	Optional<Client> findByClientId(String clientId);
 }
